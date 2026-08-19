@@ -4,10 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio de Mariana Sosa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
+      <!-- La navegación permite acceder rápidamente a cada sección mediante enlaces internos. -->
       <nav>
         <div class="logo">Mariana Sosa</div>
 
@@ -22,6 +29,7 @@
     </header>
 
     <main>
+      <!-- La sección de inicio funciona como presentación principal y destaca mi perfil profesional. -->
       <section id="inicio" class="hero">
         <div class="hero-content">
           <p class="hero-saludo">Hola, soy</p>
@@ -48,105 +56,166 @@
           </div>
         </div>
       </section>
-     <section id="sobre-mi" class="seccion">
-    <div class="contenido">
-        <h2>Sobre mí</h2>
+      <section id="sobre-mi" class="seccion">
+    <div class="sobre-mi-container">
 
-        <p>
-            Soy una persona interesada en el mundo de la tecnología
-            y el desarrollo de aplicaciones web.
-        </p>
+        <div class="foto-perfil">
+            <img src="img/foto perfil.png" alt="Foto de Mariana Sosa">
+        </div>
 
-        <p>
-            Me gusta aprender nuevas herramientas, resolver problemas
-            y transformar ideas en proyectos funcionales.
-        </p>
+        <div class="contenido">
+            <h2>Sobre mí</h2>
 
-        <p>
-            Actualmente continúo fortaleciendo mis conocimientos
-            en desarrollo web y programación.
-        </p>
+            <p>
+                Soy una persona interesada en el mundo de la tecnología
+                y el desarrollo de aplicaciones web.
+            </p>
+
+            <p>
+                Me gusta aprender nuevas herramientas, resolver problemas
+                y transformar ideas en proyectos funcionales.
+            </p>
+
+            <p>
+                Actualmente continúo fortaleciendo mis conocimientos
+                en desarrollo web y programación.
+            </p>
+        </div>
+
     </div>
 </section>
-     <section id="habilidades" class="seccion">
-    <h2>Habilidades</h2>
+      <section id="habilidades" class="seccion">
+        <h2>Habilidades</h2>
 
-    <div class="habilidades-container">
-
-        <div class="habilidad">
+        <div class="habilidades-container">
+          <div class="habilidad">
             <h3>HTML</h3>
             <p>Creación de estructuras para páginas web.</p>
-        </div>
+          </div>
 
-        <div class="habilidad">
+          <div class="habilidad">
             <h3>CSS</h3>
             <p>Diseño y estilos para páginas web.</p>
-        </div>
+          </div>
 
-        <div class="habilidad">
+          <div class="habilidad">
             <h3>JavaScript</h3>
             <p>Programación e interacción en sitios web.</p>
-        </div>
+          </div>
 
-        <div class="habilidad">
+          <div class="habilidad">
             <h3>Bootstrap</h3>
             <p>Creación de sitios web responsive.</p>
+          </div>
         </div>
+      </section>
+      <!-- Los proyectos están organizados mediante elementos article para representar cada trabajo de forma independiente. -->
+      <section id="proyectos" class="seccion">
+        <h2>Proyectos</h2>
 
-    </div>
-</section>
-     <section id="proyectos" class="seccion">
-    <h2>Proyectos</h2>
-
-    <div class="proyectos-container">
-        <article class="proyecto">
+        <div class="proyectos-container">
+          <article class="proyecto">
+            <img src="img/logo clinica.png" alt="Vista del sistema de gestión de la Clínica SePrice" />
             <h3>Sistema de Clínica SePrice</h3>
             <p>
-                Sistema de gestión de turnos, pacientes,
-                estudios médicos, especialidades y profesionales .
+              Sistema de gestión de turnos, pacientes, estudios médicos,
+              especialidades y profesionales .
             </p>
-            <a href="https://github.com/MaruSosa/ClinicaSePrice">Ver proyecto</a>
-        </article>
+            <a href="https://github.com/MaruSosa/ClinicaSePrice"
+              >Ver proyecto</a
+            >
+          </article>
 
-        <article class="proyecto">
+          <article class="proyecto">
+            <img src="img/logo aleli.png" alt="Vista de logo de Aleli" />
             <h3>Cotillón Aleli</h3>
             <p>
-                Página web para la venta de artículos de cotillón,
-                diseñada para presentar productos de manera atractiva.
+              Página web para la venta de artículos de cotillón, diseñada para
+              presentar productos de manera atractiva.
             </p>
             <a href="https://proyectoaleli-ms.netlify.app/">Ver proyecto</a>
-        </article>
-        <article class="proyecto">
+          </article>
+          <article class="proyecto">
+            <img src="img/logo parrillada.png" alt="Vista de logo parrillada" />
             <h3>R-Parrillada</h3>
             <p>
-                Página web de una parillada,
-                diseñada para presentar productos de manera atractiva.
+              Página web de una parillada, diseñada para presentar productos de
+              manera atractiva.
             </p>
             <a href="https://miparrillada-ms.netlify.app/">Ver proyecto</a>
-        </article>
-
+          </article>
+        </div>
+      </section>
+      <!-- El formulario utiliza labels asociados a cada campo para mejorar la accesibilidad y facilitar su uso. -->
+      <section id="contacto" class="seccion">
+  <div class="contacto-wrapper">
+    <div class="contacto-header">
+      <h2>Contacto</h2>
+      <p>
+        Si querés conocer más sobre mi trabajo o ponernos en contacto, podés
+        enviarme un mensaje o encontrarme en mis redes sociales.
+      </p>
     </div>
-</section>
-       <section id="contacto" class="seccion">
-    <div class="contacto">
-        <h2>Contacto</h2>
 
-        <p>
-            Si querés conocer más sobre mi trabajo o ponerte en contacto conmigo,
-            podés escribirme.
-        </p>
+    <form class="formulario-contacto">
+      <div class="campo">
+        <label for="nombre">Nombre</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Ingresá tu nombre"
+          required
+        />
+      </div>
 
-        <a href="mailto:marianass712@gmail.com" class="boton-contacto">
-            Enviarme un email
-        </a>
+      <div class="campo">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Ingresá tu email"
+          required
+        />
+      </div>
 
-        <a href="https://www.linkedin.com/in/mariana-sosa-0b2378185/" target="_blank" class="boton-contacto">
-            Ver mi Linkedin 
-        </a>
-        <a href="https://www.facebook.com/mariana.sosa.5015" target="_blank" class="boton-contacto">
-            Facebook
-        </a>
-    </div>
+      <div class="campo">
+        <label for="mensaje">Mensaje</label>
+        <textarea
+          id="mensaje"
+          name="mensaje"
+          rows="5"
+          placeholder="Escribí tu mensaje"
+          required
+        ></textarea>
+      </div>
+
+      <button type="submit" class="boton-enviar">Enviar mensaje</button>
+
+      <div class="redes-contacto">
+        <span>O si preferís, podés escribirme directo en:</span>
+        <div class="redes-links">
+          <a href="mailto:marianass712@gmail.com"  target="_blank"
+            rel="noopener noreferrer"class="link-social">Email</a>
+          <a
+            href="https://www.linkedin.com/in/mariana-sosa-0b2378185/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-social"
+            >LinkedIn</a
+          >
+          <a
+            href="https://www.facebook.com/mariana.sosa.5015"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-social"
+            >Facebook</a
+          >
+        </div>
+      </div>
+    </form>
+  </div>
 </section>
     </main>
 
