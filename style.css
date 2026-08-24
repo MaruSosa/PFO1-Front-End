@@ -14,16 +14,16 @@ body {
     font-family: "Poppins", sans-serif;
     /* Degradado Dark Mode limpio y profesional */
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    background-attachment: fixed; /* Mantiene el degradado fijo al hacer scroll */
+    background-attachment: fixed; 
     color: #f8fafc;
     line-height: 1.6;
 }
 
-/* Menú de navegación estilo Glassmorphism */
+/* Menú de navegación */
 
 nav {
     background: rgba(15, 23, 42, 0.8);
-    backdrop-filter: blur(10px); /* Efecto vidrio esmerilado */
+    backdrop-filter: blur(10px); 
     padding: 20px 60px;
     display: flex;
     justify-content: space-between;
@@ -54,7 +54,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #38bdf8; /* Azul cian vibrante en hover */
+    color: #38bdf8; 
 }
 
 /* Sección Inicio */
@@ -76,14 +76,14 @@ nav a:hover {
 #inicio h1 {
     font-size: 3.5rem;
     margin: 10px 0;
-    color: #ffffff; /* Blanco para máxima legibilidad */
+    color: #ffffff; 
 }
 
 #inicio h2 {
     font-size: 1.6rem;
     font-weight: normal;
     margin-bottom: 20px;
-    color: #cbd5e1; /* Gris claro */
+    color: #cbd5e1; 
 }
 
 #inicio p {
@@ -148,45 +148,92 @@ nav a:hover {
   text-decoration: none;
 }
 
+
 /* Efecto al pasar el cursor */
 .redes-sociales a:hover {
   color: #38bdf8;
   transform: translateY(-3px);
-  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.5)); /* Agrega brillo suave */
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.5)); 
 }
 
 /* Habilidades */
 
-.habilidades-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
+#habilidades {
+  padding: 4rem 5%;
+ 
+}
+
+.contenedor-habilidades {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.grupo-habilidades {
+  background-color: #151217;
+  border: 1px solid #333333;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.grupo-habilidades h3 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
+  color: rgb(11, 203, 254);
+}
+
+.habilidades-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 2.5rem;
+  justify-items: center;
 }
 
 .habilidad {
-    background-color: #1e293b;
-    padding: 30px 20px;
-    border-radius: 15px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
 }
 
-.habilidad h3 {
-    color: #f8fafc;
-    margin-bottom: 15px;
-    font-size: 1.4rem;
+.habilidad i {
+  font-size: 4.5rem;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
 }
 
-.habilidad p {
-    color: #94a3b8;
+.habilidad span {
+  font-size: 1rem;
+  color: #b3b3b3;
+  font-weight: 700;
+  transition: color 0.3s ease;
 }
 
-.habilidad:hover {
-    transform: translateY(-8px);
-    border-color: #38bdf8;
+/* --- Efecto hover --- */
+/* tarjeta */
+.habilidad:hover i {
+  transform: trasladarY(-10px) escala(1.1);
+  filter: drop-shadow(0px 10px 10px rgba(11, 203, 254, 0.4));
 }
+
+/* texto se ilumina */
+.habilidad:hover span {
+  color: rgb(11, 203, 254);
+}
+
+/* --- consulta de medios --- */
+@media (min-width: 768px) {
+  #habilidades {
+    padding: 6rem 5%;
+  }
+}
+
 
 /* Proyectos */
 
@@ -235,7 +282,15 @@ nav a:hover {
     transform: translateY(-8px);
     border-color: #6366f1;
 }
-
+.proyecto img {
+  width: 100%;
+  height: 180px;             /* Altura uniforme para todas las tarjetas */
+  object-fit: contain;       /* Mantiene la proporción sin deformar la captura */
+  background-color: #0f172a; /* Fondo oscuro uniforme detrás del logo/captura */
+  padding: 15px;             /* Margen interno para que la imagen "respire" */
+  border-radius: 10px;       /* Bordes suaves */
+  margin-bottom: 15px;
+}
 /* Contacto */
 
 #contacto {
@@ -276,32 +331,308 @@ nav a:hover {
     gap: 60px;
     max-width: 1000px;
     margin: 0 auto;
+    
+}
+
+.foto-perfil{
+  position: relative;
+  width: 500px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .foto-perfil img {
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid #38bdf8;
     box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+    display: block;
+    filter: grayscale(100%) sepia(30%) hue-rotate(160deg) saturate(3);
+    transition: filter 0.5s ease, transform 0.4s ease;
 }
 
-/* Footer */
-
-footer {
-    background-color: #0f172a;
-    color: #94a3b8;
-    text-align: center;
-    padding: 25px;
-    margin-top: 50px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+.foto-perfil:hover img{
+  filter: none;
+  transform: scale(1.05);
 }
 
-footer p {
-    margin: 0;
+.foto-caption{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+  text-align: center;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 80%);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
 }
 
+.foto-perfil:hover .foto-caption{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.foto-caption-nombre{
+  font-weight: 700;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.foto-caption-rol{
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  margin-top: 2px;
+}
+/*  SECCIÓN PELÍCULAS */
+.tabla-contenedor {
+    max-width: 50rem;
+    margin: auto;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    color: #111;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Montserrat', sans-serif;
+}
+
+th, td {
+    border-bottom: 1px solid #eee;
+    padding: 1rem;
+    text-align: left;
+}
+
+th {
+    background-color: #f9f9f9;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* SECCIÓN MARCADOREs */
+/* --- HOBBIES / PELÍCULAS ---
+---------------------------------------- */
+
+.contenedor-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 3rem auto 0;
+}
+
+/* la card: define el "escenario" 3D donde va a girar */
+.card {
+  perspective: 1200px;
+  height: 320px;
+}
+
+/* este es el elemento que realmente rota */
+.card .face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+/* wrapper necesario para que ambas caras roten juntas */
+.card {
+  position: relative;
+}
+
+.card .face.front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.card .face.back {
+  transform: rotateY(180deg);
+  background: #151217;
+  border: 1px solid #333333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+/* al pasar el mouse: la frontal gira hacia adentro, la trasera queda al frente */
+.card:hover .face.front {
+  transform: rotateY(-180deg);
+}
+
+.card:hover .face.back {
+  transform: rotateY(0deg);
+}
+
+/* cara frontal: imagen + título superpuesto abajo */
+.face.front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.face.front h3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+/* cara trasera: título + descripción */
+.face.back h3 {
+  color: rgb(11, 203, 254);
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+
+.face.back p {
+  color: #b3b3b3;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.contenedor-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 20px 0;
+}
+
+/* --- ESTRUCTURA DE TARJETA 3D --- */
+.card {
+  position: relative;
+  width: 100%;
+  height: 330px;
+  perspective: 1000px; /* Efecto de profundidad 3D */
+}
+
+.card .face {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  backface-visibility: hidden; /* Oculta la parte trasera cuando gira */
+  transition: transform 0.6s ease;
+}
+
+/* CARA FRONTAL */
+.card .face.front {
+  background-color: #1e293b;
+  display: flex;
+  flex-direction: column;
+}
+
+.card .face.front img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover; /* Ajusta la imagen de la portada */
+}
+
+.card .face.front h3 {
+  height: 20%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.05rem;
+  background-color: #1e293b;
+}
+
+/* CARA TRASERA (TEXTO) */
+.card .face.back {
+  background-color: #0f172a;
+  border: 1px solid #38bdf8;
+  color: #e2e8f0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transform: rotateY(180deg); /* Empieza volteada */
+}
+
+.card .face.back h3 {
+  color: #38bdf8;
+  margin-bottom: 12px;
+}
+
+.card .face.back p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #94a3b8;
+}
+
+/* --- ANIMACIÓN AL PASAR EL MOUSE (EN PC) --- */
+.card:hover .face.front {
+  transform: rotateY(-180deg);
+}
+
+.card:hover .face.back {
+  transform: rotateY(0deg);
+}
+
+/* --- ADAPTACIÓN PARA CELULARES --- */
+@media (max-width: 600px) {
+  .card {
+    height: auto;
+    perspective: none;
+  }
+  
+  .card:hover .face.front,
+  .card:hover .face.back {
+    transform: none; /* Desactiva el giro en pantallas táctiles */
+  }
+
+  .card .face {
+    position: relative;
+    inset: auto;
+    backface-visibility: visible;
+  }
+
+  .card .face.front {
+    border-radius: 12px 12px 0 0;
+  }
+
+  .card .face.front img {
+    height: 220px;
+  }
+
+  .card .face.back {
+    transform: none;
+    border-radius: 0 0 12px 12px;
+    border-top: none;
+  }
+}
 /* Formulario de contacto */
 
 .contacto-wrapper {
@@ -453,4 +784,103 @@ footer p {
     .seccion {
         padding: 60px 20px;
     }
+}
+/* --- FOOTER ---
+---------------------------------------- */
+
+footer {
+  border-top: 1px solid #333333;
+  padding: 3rem 5% 2rem;
+  position: relative;
+}
+
+/* contenedor principal */
+.footer-contenido {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* redes */
+.footer-redes {
+  display: flex;
+  gap: 1.2rem;
+}
+
+/* icono circular */
+.footer-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+
+  /* borde degradado */
+  border: 2px solid transparent;
+  background:
+    linear-gradient(#000000, #000000) padding-box,
+    linear-gradient(to right, rgb(11, 203, 254), rgb(89, 29, 200)) border-box;
+
+  color: rgb(11, 203, 254);
+  transition: all 0.3s ease;
+}
+
+/* redes al pasar el mouse */
+.footer-link:hover {
+  transform: scale(1.15);
+  color: rgb(167, 139, 250);
+  box-shadow: 0 0 12px rgba(11, 203, 254, 0.4);
+}
+
+/* texto para contactarse */
+.footer-cta {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: rgb(11, 203, 254);
+  transition: color 0.3s ease;
+}
+
+.footer-cta:hover {
+  color: rgb(167, 139, 250);
+}
+
+/* copyright */
+.footer-copyright {
+  font-size: 0.85rem;
+  color: #777777;
+}
+
+/* botón para subir */
+.footer-subir {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 200;
+}
+
+.footer-subir a {
+  font-size: 2.4rem;
+  color: #21a3ba;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+/* hover sobre el botón subir */
+.footer-subir a:hover {
+  color: rgb(156, 54, 142);
+  transform: translateY(-3px);
+}
+
+/* media query */
+@media (min-width: 768px) {
+  .footer-contenido {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.5rem;
+  }
 }
